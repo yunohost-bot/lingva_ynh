@@ -1,0 +1,56 @@
+packaging_format = 2
+
+id = "lingva"
+name = "Lingva Translate"
+description.en = "Alternative front-end for Google Translate "
+
+version = "2023.1.13~ynh1"
+
+maintainers = ["the7thNightmare"]
+
+[upstream]
+license = "AGPL-3.0"
+demo = "https://lingva.ml"
+code = "https://github.com/thedaviddelta/lingva-translate"
+
+[integration]
+yunohost = ">= 11.1.14"
+architectures = "all"
+multi_instance = true
+ldap = "not_relevant"
+sso = "not_relevant"
+disk = "50M"
+ram.build = "50M"
+ram.runtime = "50M"
+
+[install]
+    [install.domain]
+    type = "domain"
+
+    [install.init_main_permission]
+    type = "group"
+    default = "visitors"
+
+[resources]
+    [resources.sources]
+
+        [resources.sources.main]
+        url = "https://github.com/thedaviddelta/lingva-translate/archive/0190ea5da9fbccba51e82184ca855c4ef5728fc7.tar.gz"
+        sha256 = "2071fa6c0d2f6b714d10379b541cf11c88f3c8438f2ee229ffdbaee85f98cdc0"
+
+    [resources.system_user]
+
+    [resources.install_dir]
+
+    [resources.data_dir]
+
+    [resources.permissions]
+    main.url = "/"
+
+    [resources.ports]
+    main.default = 3000
+
+    [resources.apt]
+    packages = "yarnpkg npm"
+
+    [resources.database]
