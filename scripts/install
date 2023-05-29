@@ -14,7 +14,7 @@ source /usr/share/yunohost/helpers
 #=================================================
 
 ynh_install_nodejs --nodejs_version=$nodejs_version
-yng_use_nodejs
+ynh_use_nodejs
 
 #=================================================
 # APP "BUILD" (DEPLOYING SOURCES, VENV, COMPILING ETC)
