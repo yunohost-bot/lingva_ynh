@@ -51,6 +51,4 @@ ram.runtime = "50M"
     main.default = 3000
 
     [resources.apt]
-    packages = "yarnpkg npm"
-
-    [resources.database]
+    packages = "npm"
