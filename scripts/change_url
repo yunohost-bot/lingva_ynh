@@ -41,9 +41,10 @@ fi
 #=================================================
 ynh_script_progression --message="Rebuilding the app..." --weight=1
 
-npm install --prefix "$install_dir"
+ynh_use_nodejs
+ynh_exec_as $app $ynh_node_load_PATH $ynh_npm install
 npx next telemetry disable
-npm run build --prefix "$install_dir"
+ynh_exec_as $app $ynh_node_load_PATH $ynh_npm build
 
 #=================================================
 # GENERIC FINALISATION
