@@ -50,7 +50,7 @@ then
 		new_next_path=$new_path
 	fi
 
-	ynh_replace_string --match_string="module.exports = { basePath: '$old_path', };" --replace_string="module.exports = { basePath: '$new_path', };"
+	ynh_replace_string --match_string="module.exports = { basePath: '$old_path', };" --replace_string="module.exports = { basePath: '$new_path', };" --target_file="$install_dir/next.config.js"
 fi
 
 #=================================================
