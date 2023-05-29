@@ -36,13 +36,29 @@ then
 	ynh_replace_string --match_string="NEXT_PUBLIC_SITE_DOMAIN=$old_domain" --replace_string="NEXT_PUBLIC_SITE_DOMAIN=$new_domain" --target_file="$install_dir/.env.local"
 fi
 
+if [ $change_path -eq 1 ]
+then
+	if [ "$old_path" = "/" ]; then
+		old_next_path=""
+	else
+		old_next_path=$old_path
+	fi
+
+	if [ "$new_path" = "/" ]; then
+		new_next_path=""
+	else
+		new_next_path=$new_path
+	fi
+
+	ynh_replace_string --match_string="module.exports = { basePath: '$old_path', };" --replace_string="module.exports = { basePath: '$new_path', };"
+fi
+
 #=================================================
 # REBUILDING AND INSTALL THE APP
 #=================================================
 ynh_script_progression --message="Rebuilding the app..." --weight=1
 
 ynh_use_nodejs
-ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH $ynh_npm install --prefix="$install_dir"
 npx next telemetry disable
 ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH $ynh_npm run build --prefix="$install_dir"
 

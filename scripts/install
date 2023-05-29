@@ -51,6 +51,18 @@ chmod 400 "$install_dir/.env.local"
 chown $app:$app "$install_dir/.env.local"
 
 #=================================================
+# CONFIGURATION FOR SUBPATH
+#=================================================
+
+if [ "$path" = "/" ]; then
+	next_path=""
+else
+	next_path=$path
+fi
+
+echo "module.exports = { basePath: '$next_path', };" >> "$install_dir/next.config.js"
+
+#=================================================
 # BUILD AND INSTALL THE APP
 #=================================================
 ynh_script_progression --message="Building the app..." --weight=1
