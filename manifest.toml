@@ -37,6 +37,7 @@ ram.runtime = "50M"
         [resources.sources.main]
         url = "https://github.com/thedaviddelta/lingva-translate/archive/0190ea5da9fbccba51e82184ca855c4ef5728fc7.tar.gz"
         sha256 = "157657aba6b2c3866105707560199dadcf7268514320c81a4a4a4b10c17333fc"
+        in_subdir = true
 
     [resources.system_user]
 
