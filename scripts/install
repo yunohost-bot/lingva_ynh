@@ -73,6 +73,7 @@ echo "module.exports = { basePath: '$next_path', };" >> "$install_dir/next.confi
 #=================================================
 ynh_script_progression --message="Building the app..." --weight=1
 
+ynh_use_nodejs
 ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH $ynh_npm install --prefix="$install_dir"
 npx next telemetry disable
 ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH $ynh_npm run build --prefix="$install_dir"
