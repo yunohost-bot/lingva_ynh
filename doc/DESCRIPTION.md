@@ -1,1 +1,1 @@
-This is a dummy description of this app features
+Alternative front-end for Google Translate, serving as a Free and Open Source translator with over a hundred languages available
