@@ -106,7 +106,7 @@ ynh_script_progression --message="Updating a configuration file..." --weight=1
 ### The file will automatically be backed-up if it's found to be manually modified (because
 ### ynh_add_config keeps track of the file's checksum)
 
-ynh_add_config --template="conf/.env.local" --destination="$install_dir/.env.local"
+ynh_add_config --template=".env.local" --destination="$install_dir/.env.local"
 
 chmod 400 "$install_dir/.env.local"
 chown $app:$app "$install_dir/.env.local"
