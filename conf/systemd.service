@@ -7,7 +7,7 @@ Type=simple
 User=__APP__
 Group=__APP__
 WorkingDirectory=__INSTALL_DIR__/
-ExecStart=/usr/bin/npx start -p __PORT__
+ExecStart=/usr/bin/npx next start -p __PORT__
 StandardOutput=append:/var/log/__APP__/__APP__.log
 StandardError=inherit
 
