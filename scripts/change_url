@@ -36,6 +36,11 @@ then
 	ynh_replace_string --match_string="NEXT_PUBLIC_SITE_DOMAIN=$old_domain" --replace_string="NEXT_PUBLIC_SITE_DOMAIN=$new_domain" --target_file="$install_dir/.env.local"
 fi
 
+#=================================================
+# REBUILDING AND INSTALL THE APP
+#=================================================
+ynh_script_progression --message="Rebuilding the app..." --weight=1
+
 npm install --prefix "$install_dir"
 npx next telemetry disable
 npm run build --prefix "$install_dir"
