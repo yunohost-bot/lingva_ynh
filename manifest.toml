@@ -2,7 +2,8 @@ packaging_format = 2
 
 id = "lingva"
 name = "Lingva Translate"
-description.en = "Alternative front-end for Google Translate "
+description.en = "Alternative front-end for Google Translate"
+description.id = "Antarmuka alternatif untuk Google Translate"
 
 version = "2023.1.13~ynh1"
 
