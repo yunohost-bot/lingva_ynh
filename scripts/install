@@ -58,6 +58,16 @@ echo "module.exports = { basePath: '$next_path', };" >> "$install_dir/next.confi
 
 ynh_replace_string --match_string="src={useColorModeValue(\"/banner_light.svg\", \"/banner_dark.svg\")}" --replace_string="src={useColorModeValue(\"$next_path/banner_light.svg\", \"$next_path/banner_dark.svg\")}" --target_file="$install_dir/components/Header.tsx"
 
+ynh_replace_string --match_string="href=\"/favicon" --replace_string="href=\"$next_path/favicon" --target_file="$install_dir/components/CustomHead.tsx"
+
+ynh_replace_string --match_string="href=\"/apple" --replace_string="href=\"$next_path/apple" --target_file="$install_dir/components/CustomHead.tsx"
+
+ynh_replace_string --match_string="start_url\": \"/" --replace_string="start_url\": \"$next_path/" --target_file="$install_dir/public/manifest.json"
+
+ynh_replace_string --match_string="scope\": \"/" --replace_string="scope\": \"$next_path/" --target_file="$install_dir/public/manifest.json"
+
+ynh_replace_string --match_string="src\": \"/favicon" --replace_string="src\": \"$next_path/favicon" --target_file="$install_dir/public/manifest.json"
+
 #=================================================
 # BUILD AND INSTALL THE APP
 #=================================================
