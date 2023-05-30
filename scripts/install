@@ -10,13 +10,6 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# STARTING NODEJS
-#=================================================
-
-ynh_install_nodejs --nodejs_version=$nodejs_version
-ynh_use_nodejs
-
-#=================================================
 # APP "BUILD" (DEPLOYING SOURCES, VENV, COMPILING ETC)
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -38,11 +31,6 @@ ynh_script_progression --message="Adding system configurations related to $app..
 
 # Create a dedicated NGINX config using the conf/nginx.conf template
 ynh_add_nginx_config
-
-# Create a dedicated systemd config
-ynh_add_systemd_config
-
-yunohost service add $app --description="alternative to google translate" --log="/var/log/$app/$app.log"
 
 #=================================================
 # APP INITIAL CONFIGURATION
@@ -73,6 +61,7 @@ echo "module.exports = { basePath: '$next_path', };" >> "$install_dir/next.confi
 #=================================================
 ynh_script_progression --message="Building the app..." --weight=1
 
+ynh_install_nodejs --nodejs_version=$nodejs_version
 ynh_use_nodejs
 ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH $ynh_npm install --prefix="$install_dir"
 npx next telemetry disable
@@ -84,6 +73,10 @@ ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH $ynh_npm run build --pre
 # START SYSTEMD SERVICE
 #=================================================
 ynh_script_progression --message="Starting a systemd service..." --weight=1
+
+ynh_add_systemd_config
+
+yunohost service add $app --description="alternative to google translate" --log="/var/log/$app/$app.log"
 
 # Start a systemd service
 ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$app/$app.log"

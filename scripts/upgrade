@@ -82,23 +82,12 @@ fi
 chown -R $app:www-data "$install_dir"
 
 #=================================================
-# STARTING NODEJS
-#=================================================
-
-ynh_use_nodejs
-
-#=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
 #=================================================
 ynh_script_progression --message="Upgrading system configurations related to $app..." --weight=1
 
 # Create a dedicated NGINX config using the conf/nginx.conf template
 ynh_add_nginx_config
-
-# Create a dedicated systemd config
-ynh_add_systemd_config
-
-yunohost service add $app --description="alternative to google translate" --log="/var/log/$app/$app.log"
 
 #=================================================
 # RECONFIGURE THE APP (UPDATE CONF, APPLY MIGRATIONS...)
@@ -130,6 +119,11 @@ ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH $ynh_npm run build --pre
 # START SYSTEMD SERVICE
 #=================================================
 ynh_script_progression --message="Starting a systemd service..." --weight=1
+
+# Create a dedicated systemd config
+ynh_add_systemd_config
+
+yunohost service add $app --description="alternative to google translate" --log="/var/log/$app/$app.log"
 
 ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$app/$app.log"
 
