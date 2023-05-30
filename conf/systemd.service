@@ -7,7 +7,7 @@ Type=simple
 User=__APP__
 Group=__APP__
 WorkingDirectory=__INSTALL_DIR__/
-ExecStart=__NODEJS_PATH__/npx next start -p __PORT__
+ExecStart=yarn run next start -p __PORT__
 
 # Sandboxing options to harden security
 # Depending on specificities of your service/app, you may need to tweak these
