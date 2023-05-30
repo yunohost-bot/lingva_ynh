@@ -58,6 +58,8 @@ then
 
 	ynh_replace_string --match_string="href=\"$old_next_path/apple" --replace_string="href=\"$new_next_path/apple" --target_file="$install_dir/components/CustomHead.tsx"
 
+	ynh_replace_string --match_string="href=\"$old_next_path/manifest" --replace_string="href=\"$new_next_path/manifest" --target_file="$install_dir/components/CustomHead.tsx"
+
 	ynh_replace_string --match_string="start_url\": \"$old_next_path/" --replace_string="start_url\": \"$new_next_path/" --target_file="$install_dir/public/manifest.json"
 
 	ynh_replace_string --match_string="scope\": \"$old_next_path/" --replace_string="scope\": \"$new_next_path/" --target_file="$install_dir/public/manifest.json"
