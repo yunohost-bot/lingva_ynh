@@ -59,7 +59,6 @@ fi
 ynh_script_progression --message="Rebuilding the app..." --weight=1
 
 ynh_use_nodejs
-npx next telemetry disable
 ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH $ynh_npm run build --prefix="$install_dir"
 
 #=================================================
