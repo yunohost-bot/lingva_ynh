@@ -51,6 +51,8 @@ then
 	fi
 
 	ynh_replace_string --match_string="module.exports = { basePath: '$old_next_path', };" --replace_string="module.exports = { basePath: '$new_next_path', };" --target_file="$install_dir/next.config.js"
+
+	ynh_replace_string --match_string="src={useColorModeValue(\"$old_next_path/banner_light.svg\", \"$old_next_path/banner_dark.svg\")}" --replace_string="src={useColorModeValue(\"$new_next_path/banner_light.svg\", \"$new_next_path/banner_dark.svg\")}" --target_file="$install_dir/components/Header.tsx"
 fi
 
 #=================================================
