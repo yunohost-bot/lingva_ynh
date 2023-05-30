@@ -1,0 +1,28 @@
+{
+  "name": "Lingva Translate",
+  "short_name": "Lingva",
+  "start_url": "__NEXT_PATH__/",
+  "scope": "__NEXT_PATH__/",
+  "display": "standalone",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "__NEXT_PATH__/favicon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "__NEXT_PATH__/favicon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "__NEXT_PATH__/favicon-maskable.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "background_color": "#bde3cb",
+  "theme_color": "#bde3cb"
+}
