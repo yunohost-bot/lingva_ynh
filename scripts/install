@@ -63,7 +63,7 @@ ynh_script_progression --message="Building the app..." --weight=1
 
 yarn config set enableTelemetry 0
 ynh_exec_warn_less yarn --cwd "$install_dir" install
-yarn run next telemetry disable
+yarn --cwd "$install_dir" run next telemetry disable
 ynh_exec_warn_less yarn --cwd "$install_dir" build
 
 #=================================================
