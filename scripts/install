@@ -56,7 +56,7 @@ fi
 
 echo "module.exports = { basePath: '$next_path', };" >> "$install_dir/next.config.js"
 
-ynh_replace_string --match_string="src={useColorModeValue("/banner_light.svg", "/banner_dark.svg")}" --replace_string="src={useColorModeValue("$next_path/banner_light.svg", "$next_path/banner_dark.svg")} --target_file="$install_dir/components/Header.tsx"
+ynh_replace_string --match_string="src={useColorModeValue(\"/banner_light.svg\", \"/banner_dark.svg\")}" --replace_string="src={useColorModeValue(\"$next_path/banner_light.svg\", \"$next_path/banner_dark.svg\")} --target_file="$install_dir/components/Header.tsx"
 
 #=================================================
 # BUILD AND INSTALL THE APP
