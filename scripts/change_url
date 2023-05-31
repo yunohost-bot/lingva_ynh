@@ -46,11 +46,15 @@ then
 
 	if [ "$new_path" = "/" ]; then
 		new_next_path=""
+		next_path=""
 	else
 		new_next_path=$new_path
+		next_path=$new_path
 	fi
 
-	ynh_replace_string --match_string="module.exports = { basePath: '$old_next_path', };" --replace_string="module.exports = { basePath: '$new_next_path', };" --target_file="$install_dir/next.config.js"
+	ynh_add_config --template="manifest.json" --destination="$install_dir/public/manifest.json"
+
+	ynh_add_config --template="next.config.js" --destination="$install_dir/next.config.js"
 
 	ynh_replace_string --match_string="src={useColorModeValue(\"$old_next_path/banner_light.svg\", \"$old_next_path/banner_dark.svg\")}" --replace_string="src={useColorModeValue(\"$new_next_path/banner_light.svg\", \"$new_next_path/banner_dark.svg\")}" --target_file="$install_dir/components/Header.tsx"
 
@@ -59,12 +63,6 @@ then
 	ynh_replace_string --match_string="href=\"$old_next_path/apple" --replace_string="href=\"$new_next_path/apple" --target_file="$install_dir/components/CustomHead.tsx"
 
 	ynh_replace_string --match_string="href=\"$old_next_path/manifest" --replace_string="href=\"$new_next_path/manifest" --target_file="$install_dir/components/CustomHead.tsx"
-
-	ynh_replace_string --match_string="start_url\": \"$old_next_path/" --replace_string="start_url\": \"$new_next_path/" --target_file="$install_dir/public/manifest.json"
-
-	ynh_replace_string --match_string="scope\": \"$old_next_path/" --replace_string="scope\": \"$new_next_path/" --target_file="$install_dir/public/manifest.json"
-
-	ynh_replace_string --match_string="src\": \"$old_next_path/favicon" --replace_string="src\": \"$new_next_path/favicon" --target_file="$install_dir/public/manifest.json"
 fi
 
 #=================================================
