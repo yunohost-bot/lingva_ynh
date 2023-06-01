@@ -16,7 +16,7 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 
 ## Vue d’ensemble
 
-Alternative front-end for Google Translate, serving as a Free and Open Source translator with over a hundred languages available
+Lingva est un front-end alternatif à Google Translate, servant de traducteur gratuit et open source avec plus d'une centaine de langues disponibles.
 
 **Version incluse :** 2023.1.13~ynh1
 

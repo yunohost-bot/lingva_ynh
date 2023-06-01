@@ -16,7 +16,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 ## Overview
 
-Alternative front-end for Google Translate, serving as a Free and Open Source translator with over a hundred languages available
+Alternative front-end for Google Translate, serving as a Free and Open Source translator with over a hundred languages available.
 
 **Shipped version:** 2023.1.13~ynh1
 
