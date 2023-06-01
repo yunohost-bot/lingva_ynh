@@ -15,11 +15,11 @@ demo = "https://lingva.ml"
 code = "https://github.com/thedaviddelta/lingva-translate"
 
 [integration]
-yunohost = ">= 11.1.14"
+yunohost = ">= 11.1.19"
 architectures = "all"
 multi_instance = true
-ldap = "not_relevant"
-sso = "not_relevant"
+ldap = false
+sso = false
 disk = "300M"
 ram.build = "50M"
 ram.runtime = "50M"
@@ -30,7 +30,7 @@ ram.runtime = "50M"
 
     [install.path]
     type = "path"
-    default = "/"
+    default = "/lingva"
 
     [install.init_main_permission]
     type = "group"
@@ -48,13 +48,10 @@ ram.runtime = "50M"
 
     [resources.install_dir]
 
-    [resources.data_dir]
-
     [resources.permissions]
     main.url = "/"
 
     [resources.ports]
-    main.default = 3000
 
     [resources.apt]
     packages = ""

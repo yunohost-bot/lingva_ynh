@@ -4,7 +4,7 @@
 # COMMON VARIABLES
 #=================================================
 
-nodejs_version=18.16.0
+nodejs_version=18
 
 #=================================================
 # PERSONAL HELPERS
