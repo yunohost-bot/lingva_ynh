@@ -10,9 +10,14 @@
 source ../settings/scripts/_common.sh
 source /usr/share/yunohost/helpers
 
+# starting nodejs for fresh install
+ynh_install_nodejs --nodejs_version=$nodejs_version
+ynh_use_nodejs
+
 #=================================================
 # RESTORE THE APP MAIN DIR
 #=================================================
+
 ynh_script_progression --message="Restoring the app main directory..." --weight=1
 
 ynh_restore_file --origin_path="$install_dir"

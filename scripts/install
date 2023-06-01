@@ -48,8 +48,8 @@ chown $app:$app "$install_dir/.env.local"
 # CONFIGURATION FOR SUBPATH
 #=================================================
 
-rm "$install_dir/public/manifest.json"
-rm "$install_dir/next.config.js"
+ynh_secure_remove --file="$install_dir/public/manifest.json"
+ynh_secure_remove --file="$install_dir/next.config.js"
 
 if [ "$path" = "/" ]; then
 	next_path=""
@@ -69,11 +69,18 @@ ynh_replace_string --match_string="href=\"/apple" --replace_string="href=\"$next
 
 ynh_replace_string --match_string="href=\"/manifest" --replace_string="href=\"$next_path/manifest" --target_file="$install_dir/components/CustomHead.tsx"
 
+chown $app:www-data "$install_dir/public/manifest.json"
+chown $app:www-data "$install_dir/next.config.js"
+chmod 664 "$install_dir/public/manifest.json"
+chmod 664 "$install_dir/next.config.js"
+
 #=================================================
 # BUILD AND INSTALL THE APP
 #=================================================
 ynh_script_progression --message="Building the app..." --weight=1
 
+ynh_install_nodejs --nodejs_version=$nodejs_version
+ynh_use_nodejs
 yarn config set enableTelemetry 0
 ynh_exec_warn_less yarn --cwd "$install_dir" install
 yarn --cwd "$install_dir" run next telemetry disable

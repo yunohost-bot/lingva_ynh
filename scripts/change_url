@@ -70,6 +70,7 @@ fi
 #=================================================
 ynh_script_progression --message="Rebuilding the app..." --weight=1
 
+ynh_use_nodejs
 ynh_exec_warn_less yarn --cwd "$install_dir" build
 
 #=================================================
