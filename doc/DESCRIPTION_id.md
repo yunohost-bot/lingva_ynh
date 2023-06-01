@@ -1,1 +1,1 @@
-Antarmuka alternatif untuk Google Translate, menjadi alat penerjemahan yang Gratis/Bebas dan Sumber Terbuka dengan ratusan bahasa yang tersedia
+Antarmuka alternatif untuk Google Translate, menjadi alat penerjemahan yang Gratis/Bebas dan Sumber Terbuka dengan ratusan bahasa yang tersedia.
