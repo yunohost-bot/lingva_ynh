@@ -26,6 +26,10 @@ Alternative front-end for Google Translate, serving as a Free and Open Source tr
 
 ![Screenshot of Lingva Translate](./doc/screenshots/lingva-id-en.png)
 
+## :red_circle: Antifeatures
+
+- **Non-free Network Services**: Promotes or depends entirely on a non-free network service.
+
 ## Documentation and resources
 
 * Upstream app code repository: <https://github.com/thedaviddelta/lingva-translate>
