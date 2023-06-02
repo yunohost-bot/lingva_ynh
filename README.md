@@ -18,7 +18,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 Alternative front-end for Google Translate, serving as a Free and Open Source translator with over a hundred languages available.
 
-**Shipped version:** 2023.1.13~ynh1
+**Shipped version:** 2023.1.13~ynh2
 
 **Demo:** https://lingva.ml
 
