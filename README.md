@@ -33,7 +33,7 @@ Alternative front-end for Google Translate, serving as a Free and Open Source tr
 ## Documentation and resources
 
 * Upstream app code repository: <https://github.com/thedaviddelta/lingva-translate>
-* YunoHost documentation for this app: <https://yunohost.org/app_lingva>
+* YunoHost Store: <https://apps.yunohost.org/app/lingva>
 * Report a bug: <https://github.com/YunoHost-Apps/lingva_ynh/issues>
 
 ## Developer info

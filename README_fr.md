@@ -33,7 +33,7 @@ Lingva est un front-end alternatif à Google Translate, servant de traducteur gr
 ## Documentations et ressources
 
 * Dépôt de code officiel de l’app : <https://github.com/thedaviddelta/lingva-translate>
-* Documentation YunoHost pour cette app : <https://yunohost.org/app_lingva>
+* YunoHost Store: <https://apps.yunohost.org/app/lingva>
 * Signaler un bug : <https://github.com/YunoHost-Apps/lingva_ynh/issues>
 
 ## Informations pour les développeurs
