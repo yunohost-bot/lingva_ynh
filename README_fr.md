@@ -28,7 +28,7 @@ Lingva est un front-end alternatif à Google Translate, servant de traducteur gr
 
 ## :red_circle: Anti-fonctionnalités
 
-- **Services réseau non libres**: Promeut ou utilise des services réseau non libres.
+- **Services réseau non libres **: Promeut ou utilise des services réseau non libres.
 
 ## Documentations et ressources
 

@@ -26,7 +26,7 @@ Alternative front-end for Google Translate, serving as a Free and Open Source tr
 
 ![Captura de pantalla de Lingva Translate](./doc/screenshots/lingva-id-en.png)
 
-## :red_circle: Caraterísticas cuestionables
+## :red_circle: Debes considerar
 
 - **Non-free Network Services**: Promotes or depends entirely on a non-free network service.
 
